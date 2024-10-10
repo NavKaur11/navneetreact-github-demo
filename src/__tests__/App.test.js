@@ -1,15 +1,17 @@
+/* global describe, test, expect */
+
+
 // src/__tests__/App.test.js
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';   // Import React
+
 
 import { render, screen } from '@testing-library/react';
 import App from '../App'; 
 
-// Describe the test suite
-describe('App Component', () => {
-    // Test case to check if the component renders correctly
-    test('renders learn react link', () => {
-        render(<App />); // Render the App component
-        const linkElement = screen.getByText(/learn react/i); // Search for the text 'learn react'
-        expect(linkElement).toBeInTheDocument(); // Assertion to check if the text is present
+describe('App component', () => {
+    test('renders correctly', () => {
+        render(<App />);
+        expect(screen.getByText(/you clicked/i)).toBeInTheDocument(); // Example test
     });
 });
